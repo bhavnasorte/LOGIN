@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>aajuba</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+<body>
+    
+    {% for i in messages %}
+		{{i}}
+		{% endfor %}
+    
+    <form action="{% url 'registration' %}" method="POST">
+        {% csrf_token %}
+        <input type="text" name="first_name" placeholder="FIRST NAME"><br><br>
+        <input type="text" name="last_name" placeholder="LAST NAME"><br><br>
+        <input type="email" name="email" placeholder="EMAIL"><br><br>
+        <input type="text" name="username" placeholder="USERNAME"><br><br>
+        <input type="password" name="password" placeholder="PASSWORD"><br><br>
+        <input type="password" name="password1" placeholder="CONFIRM PASSWORD"><br><br>
+        <button type="submit">Submit</button>
+    </form>
+    
+</body>
+</html>
